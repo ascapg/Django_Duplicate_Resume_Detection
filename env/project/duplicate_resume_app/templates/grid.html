@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<form action="{% url 'check_validity' %}" method="GET"   id="create-form">
+<div id="btnContainer">
+  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+  <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+  
+</div>
+<br>
+<div class="row" col="8">
+{% for val in name %}
+{%if forloop.counter < 7%}
+  <div class="column" style="background-color:hsl(0, 2%, 58%);">
+    <embed src="{{ MEDIA_URL }}media/resume/{{val}}" type="application/pdf"></iframe>
+    <p>{{val}}</p>
+    <!-- <h6><a name="file_name" href="details/{{val}}">{{val}}</a></h6> -->
+    <!-- <h6>{{val}}</a></h6> -->
+  </div>
+{%endif%}
+{% endfor %}
+</div>
+
+  <br><br>
+   <div class="column" style="background-color:#b5abab;" col="16">
+    <centre></centre><table border="3" id="myTable">
+        <tr><th>Document No1 </th><th>Document No 2</th><th>Similiarity Index(%)</th><th>Click to View Resume</th><th>Check Validity</th></tr>
+        {%for x in details %}
+        <tr>
+        <td><input type="text" hidden   id={{forloop.counter}}doc1  name="document1" value={{x.0}}>{{x.0}}</td>
+        <td><input type="text" hidden id={{forloop.counter}}doc2  name="document2" value={{x.1}}>{{x.1}}</td>
+        <td>{{x.3}}</td>
+        <td><input type="submit" value="Show"  id="show"></td>
+        <td><button value="Check" id="{{forloop.counter}}" size="30">Check</button></td></tr>
+        {% endfor %}
+        <input type="text" hidden id="temp_document1" name="temp_document1" >
+        <input type="text" hidden id="temp_document2" name="temp_document2" >
+        </table>        ]
+  </div>
+  <!-- <div class = "gallery">
+    <img src="{{MEDIA_URL}}media/images/{{ path }}"  width="500" height="400" />
+    </ul>
+    </div> -->
+    <!-- <input type="submit" value="Scan and View Resume"> -->
+  </form>   
+    
+
+  <!-- <div class = "gallery">
+    <a href= "{{ MEDIA_URL }}media/images/{{ path }}" target="_blank"> View Graph</a>	
+    </ul>
+    </div> -->
+      
+
+
+     <!-- <div class="column" style="background-color:#bbb;">
+      <embed src="Ramcharan.pdf" alt="Ramcharan.pdf" onclick="myFunction(this);">
+      <h2>Ramcharan.pdf</h2>
+    </div> -->
+  </div>
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "100%";
+  }
+}
+
+// Grid View
+function gridView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "50%";
+  }
+}
+
+/* Optional: Add active class to the current button (highlight it) */
+var container = document.getElementById("btnContainer");
+var btns = container.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+$(window).on("load", function () {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[2];
+      y = rows[i + 1].getElementsByTagName("TD")[2];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+
+
+})
+$(document).ready(function() {
+  $("button").on('click',function() {
+                
+                var t1 = $('#'+this.id+"doc1").val();
+                $('#temp_document1').val(t1);
+
+                var t2 = $('#'+this.id+"doc2").val();
+                $('#temp_document2').val(t2);
+                // id="temp_document1" 
+                // // var term = $('{{x.0}}').val();
+                console.log("ddf"+t)
+                alert(t);
+            });                
+}); 
+
+
+</script>
+
+</body>
+</html

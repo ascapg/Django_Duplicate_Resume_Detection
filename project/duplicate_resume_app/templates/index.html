@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<HEAD>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contents="IE=edge">
+    <meta name="viewport" content="width=device=width, initial=scale=1.0">
+    <TITLE>User Interface</TITLE>
+    <style>
+        body {
+          /* background-image: url('R15.png'); */
+          height: 100vh;
+          background-size: cover;
+          background-position: center;
+        }
+        </style>
+</HEAD>
+<BODY>
+    <h1 style="text-align:center">
+<p style="text-align:center;">Click on the <B>Choose Files</B> Button to Upload one or more Files</p>
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    <input type= "file" id= "files" multiple= "multiple" name= "file_name" >
+    <input type="SUBMIT" style="background-color:black;color:white;width:150px;height:40px;">
+</form> 
+</h1> 
+</BODY>
+</HTML> 

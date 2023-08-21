@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Resume | Fake Resume Detection</title>
+    <link rel="icon" href="Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="page4.css">
+    <style>
+        /* Add CSS styles to properly format the content */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        .img img {
+
+           max-height: 40px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .card1, .card2 {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            height: auto;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .footer-bottom {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="img">
+                <a href="#"><img src="logo.png" alt=""></a>
+            </div>
+            <div class="right-elements">
+                <button type="submit">Help</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>Checking Valid Information</h1>
+            <div class="content">
+                <div class="card1">
+                    <b>
+                        <h2>Resume 1</h2>
+                    </b>
+                    <h1 style="text-align: left; color: black; font-size: 20px;">Candidate details:</h1>
+                    <ul>
+                        {% for key, value in dict.items %}
+                        <li><strong>{{ key }}:</strong> {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h1 style="text-align: left; color: black; font-size: 20px;">Company Details:</h1>
+                    <ul>
+                        {% for key, value in dict1.items %}
+                        <li>
+                            {% if key == "Website" %}
+                            <strong>{{ key }}:</strong> <a href="{{ value }}">{{ value }}</a>
+                            {% else %}
+                            <strong>{{ key }}:</strong> {{ value }}
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <h1 style="text-align: left; color: black; font-size: 20px;">College and University details:</h1>
+                    <ul>
+                        {% for key, value in dict2.items %}
+                        <li>
+                            {% if key == "Website" %}
+                            <strong>{{ key }}:</strong> <a href="{{ value }}">{{ value }}</a>
+                            {% else %}
+                            <strong>{{ key }}:</strong> {{ value }}
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="card2">
+                    <b>
+                        <h2>Resume 2</h2>
+                    </b>
+                    <h1 style="text-align: left; color: black; font-size: 20px;">Candidate details:</h1>
+                    <ul>
+                        {% for key, value in dict3.items %}
+                        <li><strong>{{ key }}:</strong> {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h1 style="text-align: left; color: black; font-size: 20px;">Company Details:</h1>
+                    <ul>
+                        {% for key, value in dict4.items %}
+                        <li>
+                            {% if key == "Website" %}
+                            <strong>{{ key }}:</strong> <a href="{{ value }}">{{ value }}</a>
+                            {% else %}
+                            <strong>{{ key }}:</strong> {{ value }}
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <h1 style="text-align: left; color: black; font-size: 20px;">College and University details:</h1>
+                    <ul>
+                        {% for key, value in dict5.items %}
+                        <li>
+                            {% if key == "Website" %}
+                            <strong>{{ key }}:</strong> <a href="{{ value }}">{{ value }}</a>
+                            {% else %}
+                            <strong>{{ key }}:</strong> {{ value }}
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-bottom">
+                <p>All rights reserved by Capgemini. Copyright © 2023</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2023 Aspose Pty Ltd.
+Akarsh N
+
+Data Engineer
+Mobile: +91 8121042349
+Email: akarshn9239@gmail.com
+
+SUMMARY:
+
+• Having around 4 years of IT experience which includes 3 years of experience in Hadoop and Spark development and Previous 1 years of experience as developer in Java.
+
+• Expertise with  tools in Hadoop Ecosystem including HDFS, MapReduce, Sqoop, Hive, Pig,Flume,Kafka,SparkCore,SparkSql,SparkStreaming,ElasticSearch,Kibana,kafka,contro,Abinitio.
+
+• Experience in building CI/CD using GIT, Jenkins PipeLine, Quality driven through Sonar Cube and Fortify scans
+
+• Good experience on Hadoop distributions like Cloudera, MapR.
+
+• Experience in designing and developing applications.
+
+• Good exposure with agile software development process.
+
+• Key participant in all phases of development life cycle with analysis, Design, Development, Integration, Implementation, Debugging and Testing. 
+
+
+
+AREAS OF EXPERTISE:
+
+Big Data EcosystemsHDFS, MapReduce,Sqoop, Hive,Pig, Core Spark, Spark SQL,Spark Streaming,Ooze, Azkaban,Kafka,Elastic search,GCPLanguagesJava(Oracle Certified), Scala, PythonDatabases-Sql/NosqlOracle, SQL Server, Cassandra.Development and Build ToolsEclipse, Pycharm, Intellij, Jenkins, Maven, Gradle.Operating SystemsLinux and Windows.DistributionsCloudera, MapR.MethodologyAgile.
+WORK EXPERIENCE:
+
+• Working  as  Data Engineering Analyst for JP Morgan Chase from August-2017 to till date  
+EDUCATION:
+
+• Bachelor of Engineering in Electronics and Communication Engineering from Hindustan University.
+
+    PROFESSIONAL EXPERIENCE:
+
+PROJECT#1
+Customer Expose Management System:
+This Project is designed to deliver a Portfolio Decision Platform that centralizes customers data into a business configurable decision platform which performs the necessary risk actions and integration to downstream applications and system for Credit line increase, Credit line decrease strategies and its support prequalified customer population that is eligible to be targeted for bona-fide Card, Auto and Home lending offers.
+Responsibilities:
+• Understanding existing business model and requirements. 
+• Utilization​ ​of​ ​Sqoop​ ​to​ ​transfer​ ​data​ from​ Oracle Database ​to​ ​Hadoop​ ​HDFS
+• Use Shell Scripting to pre-process the data before ingesting to raw layer.
+• Developing Spark jobs and deploy those jobs in DEV,TEST,STG Environments.
+• Doing the Peer reviews and restructuring it if requires.
+• Attending timely meeting with Dev teams to resolve the issues.
+• Attending Scrum calls and updating daily Dev and testing status to Srum Master
+
+PROJECT#2
+Portfolio offer Engine:
+
+• The URDS Portfolio offer Engine System provides users with a single source for Credit Qualifications like Balance Transfer(BT), Convenience Checks 
+(CC) for portfolio marketing programs. for Repricing and for other Marketing Programs. Through the use of the ODM Rules Builder, the user can create the
+rules that determine if a cardholder qualifies for a given Program.The outputs of this process are referred to as tags, The tags are indicators(Y/N), which
+define whether the cardholder is qualified: and reasons, which define the reason for failure to qualify.
+
+Responsibilities:
+• Understanding existing business model and requirements. 
+• Utilization​ ​of​ ​Sqoop​ ​to​ ​transfer​ ​data​ from​ Oracle Database ​to​ ​Hadoop​ ​HDFS
+• Use Shell Scripting to pre-process the data before ingesting to raw layer.
+• Developing Spark jobs and deploys those jobs in DEV, TEST, and STG Environments.
+• Doing the Peer reviews and restructuring it if requires
+• Attending timely meeting with Dev teams to resolve the issues.
+• Attending Scrum calls and updating daily Dev and testing status to Scrum Master.
+
+
+PROJECT#3
+Ageis API:
+
+An enterprise MDM solution for providers with a primary goal to cater quality provider identity and demographic information across customers using products and services and maintain a key chain of various identifiers of providers used by customer applications.
+The solution is built on open source technologies and micro services architecture.
+ Data is streamed using Kafka between micro services and REST APIs are exposed to integrate with upstream/downstream applications and UI. Other technology stack comprised of OpenShift enterprise, Kubernetes for orchestration, Cassandra to store golden records and configurations, Elastic Search, Kibana, Splunk for log management and analytics, CI/CD using GIT, Jenkins Pipeline, Quality driven through Sonar Cube and Fortify scans.
+
+Responsibilities:
+
+
+• Gathering business model and requirements. 
+• Implementing the ApIs.
+• Building the Jenkins pipeline.
+• Developing the rest end points.
+• Writing junit and integration test cases.
+• Doing Peer reviews
+• Attending timely meeting with Dev teams to resolve the issues.
+• Attending Scrum calls and updating daily Dev and testing status to Srum Master.
+
+
+Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/

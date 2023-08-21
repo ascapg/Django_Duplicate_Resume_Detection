@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<HEAD>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contents="IE=edge">
+    <meta name="viewport" content="width=device=width, initial=scale=1.0">
+    <TITLE>Resumes List</TITLE>
+    <style>
+        body {
+          background-image: url('R15.png');
+          height: 100vh;
+          background-size: cover;
+          background-position: center;
+        }
+        table, th, td {
+        border: 1px solid black;
+    }
+        </style>
+</HEAD>
+<BODY>
+<table>
+<tr><th>Document Name</th></tr>
+<div class = "gallery">
+        {% for val in name %}
+        <tr><td><li><a name="file_name" href="details/{{val}}">{{val}}</a></li></td></tr>
+        {% endfor %}
+    </ul>
+</div>
+</table>
+<table>
+    <tr><th>Document Pair</th><th>Similiarity Index</th></tr>
+    <div class = "gallery">
+            {% for doc,index in details %}
+                <tr><td>{{doc}}</td>
+                <td>{{index}}</td></tr>
+            {% endfor %}
+        </ul>
+    </div>
+    </table>
+<div class = "gallery">
+<a href= "{{ MEDIA_URL }}media/images/{{ path }}">click here</a>	
+</ul>
+</div>
+
+</BODY>
+</HTML> 

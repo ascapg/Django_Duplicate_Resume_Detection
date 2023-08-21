@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Fake Resume detection</title>
+  <link rel="icon" href=" {% static 'icon.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'Home.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="img">
+        <a href="#"><img src="{% static 'logo.png' %}" alt=""></a>
+      </div>
+      <div class="right-elements">
+        <button type="submit" href="#">Help</button>
+      </div>
+    </div>
+    <div class="content">
+      <span>Fake Resume Detection</span>
+    </div>
+    <div class="upload-form">
+      <h5>Please select your resume</h5>
+      <form method="POST" enctype="multipart/form-data" id="uploadForm" >
+        {%csrf_token%}
+        <div class="filebutton">
+          <input type="file" name="file_name" id="file" accept=".doc, .docx, .pdf" multiple= "multiple">
+          <label for="file" id="filetext">
+            <span class="material-icons">upload_file</span>&nbsp;Upload Resume
+          </label>
+        </div>
+        <div class="btn">
+          <input type="SUBMIT" name="submit" id="submit" value="Submit" >
+          <!-- <script>
+            document.getElementById("submit").addEventListener("click", myFunction);
+            function myFunction() {
+              window.location.href="page2.html";
+            }
+          </script> -->
+        </div>
+        <p id="uploadMsg" style="margin:15px 20px 1px 20px;"></p>
+      </form>
+    </div>
+    </div>
+    <footer>
+      <div class="footer-bottom">
+        <p> All rights reserved by Capgemini. Copyright © 2023</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+
+    let fileInput = document.getElementById("file");
+    let filetext = document.getElementById("filetext");
+    fileInput.addEventListener("change", () => {
+      filetext.textContent = `${fileInput.files.length} Files Selected`;
+    });
+
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+      
+      const fileInput = document.getElementById('file');
+      const uploadMsg = document.getElementById('uploadMsg');
+
+      if (fileInput.files.length > 0) {
+        uploadMsg.textContent = 'File Uploaded Successfully !';
+        // Perform further actions with the uploaded files here
+      } else {
+        uploadMsg.textContent = 'Please select a file !';
+      }
+
+      // Reset the form after handling the submission
+      event.target.reset();
+      filetext.textContent = "Upload Resume";
+    });  
+  </script>
+</body>
+</html>  
+
